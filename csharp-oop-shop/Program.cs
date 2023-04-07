@@ -25,11 +25,12 @@
                 new Product("Formaggio", "Formaggio Grana Padano", 30, 22),
             };
 
+            //Ciclo foreach per stampa elementi array
             int i = 1;
             foreach (var product in products)
             {
                 Console.WriteLine(
-                    $"{ i ++ } Prodotto \n" +
+                    $"{ i++ } Prodotto \n" +
                     $"Codice Prodotto: {product.PadLeft(product.ProductCode)} \n " +
                     $"{product.FullProductName()} \n " +
                     $"Descrzione: {product.ProductDescription} \n " +
