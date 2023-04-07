@@ -8,14 +8,14 @@ namespace csharp_oop_shop
 {
     internal class Product
     {
-        private int productCode;
+        private string productCode;
         private string productName;
         private string productDescription;
         private decimal price;
         private int iva;
 
         //codice prodotto solo in lettura
-        public int ProductCode
+        public string ProductCode
         {
             get 
             { 
@@ -31,14 +31,14 @@ namespace csharp_oop_shop
         //funzione per generare codice randomico prodotto
         public Product()
         {
-            productCode = new Random().Next(1, 10000);
+            productCode = new Random().Next(1, 10000).ToString();
         }
 
 
         //funzione che ha come parametro nome, descrizione, prezzo, iva
         public Product(string productName, string productDescription, decimal price, int iva)
         {
-            productCode = new Random().Next(1, 10000);
+            productCode = new Random().Next(1, 10000).ToString();
             ProductName = productName;
             ProductDescription = productDescription;
             Price = price;  
@@ -54,6 +54,19 @@ namespace csharp_oop_shop
         public string FullProductName()
         {
             return productCode + " - " + ProductName;
+        }
+
+        public string PadLeft( string code) 
+        {
+            int length = code.Length;
+            if (length >= 8 ) 
+            {
+                return code;
+            }
+            else
+            {
+                return code.PadLeft(8, '0');
+            }
         }
     }
 }
