@@ -4,7 +4,12 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Product firstProduct = new Product("Barbabietole", "Buonissime barbabietole", 10, 22);
+            Console.WriteLine($"PRIMO PRODOTTO \n " +
+                $"{firstProduct.FullProductName()} \n " +
+                $"Descrzione: {firstProduct.ProductDescription} \n " +
+                $"Prezzo: {firstProduct.Price} euro \n " +
+                $"Prezzo Completo: {firstProduct.FullPrice()}");
         }
     }
 }
